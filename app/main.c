@@ -5,14 +5,11 @@ int main()
 {
     double a,b,c;
     printf("enter a\n");
-    scanf("%lf",&a);
-    printf("%lf\n",a);
+    if (scanf("%lf",&a) != 1) return 0;
     printf("enter b\n");
-    scanf("%lf",&b);
-    printf("%lf\n",b);
+    if (scanf("%lf",&b) != 1) return 0;
     printf("enter c\n");
-    scanf("%lf",&c);
-    printf("%lf\n",c);
+    if (scanf("%lf",&c) != 1) return 0;
     myfunc(a,b,c);
     return 0;
 }
