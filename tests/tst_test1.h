@@ -27,4 +27,10 @@ TEST(FuncTest, number_4) {
   ASSERT_NEAR(myfunc(2,8,8).x2, 0, 0.001);
 }
 
+TEST(FuncTest, number_5){
+    ASSERT_EQ(myfunc(4, 1, 0).kolvo,2);
+    ASSERT_DOUBLE_EQ(myfunc(4, 1, 0).x1, -0.25);
+    ASSERT_DOUBLE_EQ(myfunc(4, 1, 0).x2, 0);
+}
+
 #endif // FUNC_TEST_H
