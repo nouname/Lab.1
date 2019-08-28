@@ -4,6 +4,12 @@ language:
 before_install:
   - pip install --user cpp-coveralls
 
+addons:
+  sonarcloud:
+    organization: "alexandrtel"
+    token:
+      secure: $SONAR_TOKEN
+
 script:
   - qmake
   - make
@@ -11,6 +17,12 @@ script:
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
-
+  - build-wrapper-linux-x86-64 --out-dir bw-output make all
+  - sonar-scanner
+  sonar.projectKey=AlexandrTel_Lab.1
+  sonar.projectName=Lab.1
+  sonar.projectVersion=1.0
+  sonar.sources=.
+ 
 notifications:
   email: false
