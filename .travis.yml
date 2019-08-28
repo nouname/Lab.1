@@ -19,10 +19,6 @@ after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
   - build-wrapper-linux-x86-64 --out-dir bw-output make all
   - sonar-scanner
-  sonar.projectKey=AlexandrTel_Lab.1
-  sonar.projectName=Lab.1
-  sonar.projectVersion=1.0
-  sonar.sources=.
 
 cache:
   directories:
