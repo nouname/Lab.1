@@ -23,6 +23,11 @@ after_success:
   sonar.projectName=Lab.1
   sonar.projectVersion=1.0
   sonar.sources=.
+
+cache:
+  directories:
+  - '$HOME/.sonar/cache'
+
  
 notifications:
   email: false
