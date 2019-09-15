@@ -7,7 +7,7 @@ before_install:
 
 addons:
 sonarcloud:
-organization: alexandrtel
+organization: nouname-github
 
 script:
 - qmake
@@ -17,13 +17,13 @@ script:
 after_success:
 - coveralls —root . -E ".*external.*" -E ".*tests.*"
 - build-wrapper-linux-x86-64 —out-dir bw-output make all
-- sonar-scanner
--D"sonar.projectKey=AlexandrTel_Lab.1" \
--D"sonar.organization=alexandrtel" \
--D"sonar.sources=." \
--D"sonar.cfamily.build-wrapper-output=bw-output" \
--D"sonar.host.url=https://sonarcloud.io" \
--D"sonar.login=fe90ea8caf22526a9b0622a04d0478830f0854cb"
+- sonar-scanner \
+  -D"sonar.projectKey=nouname_Lab.1" \
+  -D"sonar.organization=nouname-github" \
+  -D"sonar.sources=." \
+  -D"sonar.cfamily.build-wrapper-output=bw-output" \
+  -D"sonar.host.url=https://sonarcloud.io" \
+  -D"sonar.login=ccdedb6e9dc0a1070d655605dbc8a056579b3cb2"
 
 cache:
 directories:
