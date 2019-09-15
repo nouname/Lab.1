@@ -19,7 +19,7 @@ after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
   - build-wrapper-linux-x86-64 --out-dir bw-output make all
   - sonar-scanner
-  -Dsonar.projectKey=AlexandrTel_Lab.1 \
+  -D"sonar.projectKey=AlexandrTel_Lab.1" \
   -Dsonar.organization=alexandrtel \
   -Dsonar.sources=. \
   -Dsonar.cfamily.build-wrapper-output=bw-output \
